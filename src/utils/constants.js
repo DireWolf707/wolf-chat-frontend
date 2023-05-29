@@ -24,3 +24,9 @@ export const privateNavLinks = [
     Icon: AccountCircleIcon,
   },
 ]
+
+export const ListType = {
+  chatRoom: 0,
+  search: 1,
+  friendRequest: 2,
+}
