@@ -1,5 +1,5 @@
 import toast from "react-hot-toast"
-import Toast from "../components/layout/Toast"
+import ToastContent from "../components/layout/ToastContent"
 import { capitalize } from "@mui/material"
 
 const handleError400 = ({ message }, setFormErrors) => {
@@ -18,22 +18,22 @@ const handleError400 = ({ message }, setFormErrors) => {
 
 export default (requestPromise, loadingMsg, successMsg, setFormErrors = null) => {
   return toast.promise(requestPromise, {
-    loading: Toast(capitalize(loadingMsg) + "..."),
+    loading: ToastContent(capitalize(loadingMsg) + "..."),
     success: () => {
       if (setFormErrors) setFormErrors({})
-      return Toast(capitalize(successMsg) + "!")
+      return ToastContent(capitalize(successMsg) + "!")
     },
     error: (err) => {
       switch (err.status) {
         case 400:
-          return Toast(capitalize(handleError400(err.data, setFormErrors)) + "!")
+          return ToastContent(capitalize(handleError400(err.data, setFormErrors)) + "!")
 
         case "FETCH_ERROR":
-          return Toast("Server is unreachable at the moment!")
+          return ToastContent("Server is unreachable at the moment!")
 
         default:
           console.log(err)
-          return Toast("Something went wrong!")
+          return ToastContent("Something went wrong!")
       }
     },
   })

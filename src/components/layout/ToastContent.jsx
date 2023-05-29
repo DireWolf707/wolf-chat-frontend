@@ -1,8 +1,8 @@
 import { Typography } from "@mui/material"
 
-const Toast = (text) => (
+const ToastContent = (text) => (
   <Typography fontFamily="Righteous" fontSize="14px" textTransform="capitalize" color="black">
     {text}
   </Typography>
 )
-export default Toast
+export default ToastContent
