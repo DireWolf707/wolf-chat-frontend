@@ -30,8 +30,8 @@ const SidebarHeader = ({ setSearchTerm, selectedList, setSelectedList }) => {
             Chats
           </Typography>
 
-          <IconButton>
-            <GroupAddIcon />
+          <IconButton sx={{ bgcolor: "gray" }}>
+            <GroupAddIcon fontSize="small" />
           </IconButton>
         </Stack>
       )}
