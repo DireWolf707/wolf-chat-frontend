@@ -38,21 +38,21 @@ export default createApi({
         }),
       }),
 
-      createFriendRequest: builder.query({
+      createFriendRequest: builder.mutation({
         query: ({ userId }) => ({
           url: `/friend-request/${userId}`,
           method: "POST",
         }),
       }),
 
-      acceptFriendRequest: builder.query({
+      acceptFriendRequest: builder.mutation({
         query: ({ userId }) => ({
           url: `/friend-request/${userId}`,
           method: "PATCH",
         }),
       }),
 
-      cancelFriendRequest: builder.query({
+      cancelFriendRequest: builder.mutation({
         query: ({ userId }) => ({
           url: `/friend-request/${userId}`,
           method: "DELETE",
