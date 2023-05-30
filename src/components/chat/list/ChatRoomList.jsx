@@ -16,7 +16,7 @@ const ChatRoomList = () => {
   return (
     <Stack gap={0.3} overflow="auto" position="relative">
       {chatRooms.map((chatRoom) => (
-        <Stack flexDirection="row" gap={1.5} bgcolor="rgba(255,255,255,0.15)" p="10px">
+        <Stack key={chatRoom.id} flexDirection="row" gap={1.5} bgcolor="rgba(255,255,255,0.15)" p="10px">
           {chatRoom.isGroup && <UserAvatar user={{ username: chatRoom.name }} />}
           {!chatRoom.isGroup && <UserAvatar user={chatRoom.members[0]} />}
 
