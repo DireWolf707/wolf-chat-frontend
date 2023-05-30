@@ -4,28 +4,32 @@ import { useNavigate } from "react-router-dom"
 import MoreVertIcon from "@mui/icons-material/MoreVert"
 import LogoutIcon from "@mui/icons-material/Logout"
 
-const ChatSectionHeader = () => {
+const ChatSectionHeader = ({chatRoom}) => {
   const navigate = useNavigate()
   const isSmall = useMediaQuery((theme) => theme.breakpoints.down("sm"))
 
   return (
-    <Stack flexDirection="row" justifyContent="space-between" bgcolor="rgba(255,255,255,0.15)" py="12px">
-      <Stack flexDirection="row" alignItems="center">
-        <IconButton>
-          <MoreVertIcon />
-        </IconButton>
+    <Stack flexDirection="row" justifyContent="space-between" height="64px" bgcolor="rgba(255,255,255,0.15)" py="12px">
+      {chatRoom && (
+        <>
+          <Stack flexDirection="row" alignItems="center">
+            <IconButton>
+              <MoreVertIcon />
+            </IconButton>
 
-        <Stack flexDirection="row" alignItems="center" gap={1}>
-          <UserAvatar user={{ username: "A" }} />
+            <Stack flexDirection="row" alignItems="center" gap={1}>
+              <UserAvatar user={{ username: "A" }} />
 
-          <Typography>Username</Typography>
-        </Stack>
-      </Stack>
+              <Typography>Username</Typography>
+            </Stack>
+          </Stack>
 
-      {isSmall && (
-        <IconButton onClick={() => navigate("/chat")}>
-          <LogoutIcon />
-        </IconButton>
+          {isSmall && (
+            <IconButton onClick={() => navigate("/chat")}>
+              <LogoutIcon />
+            </IconButton>
+          )}
+        </>
       )}
     </Stack>
   )
