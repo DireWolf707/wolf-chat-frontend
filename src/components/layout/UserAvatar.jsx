@@ -8,7 +8,7 @@ const UserAvatar = ({ user, size = "40px", fontSize = "26px", cache = false }) =
   return (
     <Avatar src={src} sx={{ height: size, width: size, objectFit: "cover" }}>
       <Typography fontFamily="Righteous" fontSize={fontSize}>
-        {user.username[0].toUpperCase()}
+        {user?.username[0]?.toUpperCase()}
       </Typography>
     </Avatar>
   )
